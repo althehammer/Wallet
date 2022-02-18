@@ -1,12 +1,16 @@
 let Sum = 0
-input.onButtonPressed(Button.A, function on_button_pressed_a() {
-    
+input.onPinPressed(TouchPin.P0, function () {
+    Sum += -0.01
+})
+input.onButtonPressed(Button.A, function () {
     Sum += 1
 })
-input.onButtonPressed(Button.AB, function on_button_pressed_ab() {
-    basic.showNumber(Sum)
-})
-input.onButtonPressed(Button.B, function on_button_pressed_b() {
-    
+input.onButtonPressed(Button.AB, function () {
     Sum += 0.01
+})
+input.onButtonPressed(Button.B, function () {
+    Sum += -1
+})
+input.onGesture(Gesture.Shake, function () {
+    basic.showNumber(Sum)
 })
